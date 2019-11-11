@@ -1,0 +1,73 @@
+<!--- css float-->
+<html>
+    <head>
+        <style>
+           *{
+             box-sizing: border-box;   
+           }
+            img {
+                float: left;
+                /*float: right;*/
+                /*float: none;*/
+                /*float: center;*/
+                margin: 0 0 10px 10px;
+                width:160;
+                height:120;
+            }
+            /*aqui empieza el menu*/
+            ul {
+            /* como se ve el fonde el menu*/
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: rgb(53, 51, 51);
+            }
+            li {
+                float: left;
+            }
+            li a {
+            /*como se ve el testo normal*/
+                display: inline-block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            li a:hover {
+            /*cuando pones el raton encima*/
+                background-color: white;
+                color: black;
+                }
+            .active {
+                 background-color: pink;
+            }
+            .activeb {
+                 background-color: rgb(227, 247, 54);
+                 color:black;
+            }
+            /* aqui acaba el menu*/
+            </style>
+    </head>
+    <body>
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#news" class="activeb">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+        <div>
+            <div></div>       
+             <p>In this example, the image will float to the right in the paragraph,
+             and the text in the paragraph will wrap around the image.</p>
+
+            <p><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+                alt="W3Schools.com" >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet,
+                    nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula
+                    venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa.
+                    Fusce luctus.</p><br><br><br><br>
+            
+        </div>
+    </body>
+</html>
