@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+  <p class="solid" id="resultado">0</p>    <!--solid lo usaremos para ver la respuesta  -->
+  <input type="text" id="numero_x"><br>
+  <input type="text" id="numero_y"><br>
+  <input type="text" id="numero_z"><br>
+  <button type="button" onclick="ordenar()">Ordenatu</button>
+<script>
+  function ordenar(){
+
+    xtxt = document.getElementById("numero_x").value;
+    ytxt = document.getElementById("numero_y").value;
+    ztxt = document.getElementById("numero_z").value;
+
+    x = parseInt(xtxt);
+    y = parseInt(ytxt);
+    z = parseInt(ztxt);
+
+
+        if (x <= y && y <= z){
+          document.getElementById("resultado").innerHTML = x+"<"+y+"<"+z
+}
+
+  </script>
+    
+</body>
+</html>
