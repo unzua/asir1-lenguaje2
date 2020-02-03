@@ -4,28 +4,39 @@
 
 </head>
 <body>
-  <p class="solid" id="resultado">0</p>    <!--solid lo usaremos para ver la respuesta  -->
+  <script>
+    function ordenar(){
+
+      xtxt = document.getElementById("numero_x").value;
+      ytxt = document.getElementById("numero_y").value;
+      ztxt = document.getElementById("numero_z").value;
+
+      x = parseInt(xtxt);
+      y = parseInt(ytxt);
+      z = parseInt(ztxt);
+
+
+      if (x<=y && y<=z){
+            document.getElementById("resultado").innerHTML = x+">"+y+">"+z
+      }else if (x>=z && z>=y){
+            document.getElementById("resultado").innerHTML = x+">"+z+">"+y
+      }else if (y>=x && x>=z){
+            document.getElementById("resultado").innerHTML =y+">"+x+">"+z
+      }else if (y>=z && z>=x){
+            document.getElementById("resultado").innerHTML =y+">"+z+">"+x
+      }else if (z>=x && x>=y){
+            document.getElementById("resultado").innerHTML =z+">"+x+">"+y
+      }else if (z>=y && y>=x){
+            document.getElementById("resultado").innerHTML =z+">"+y+">"+x
+      }
+                      }
+</script>
+  <p id="resultado">0</p>    <!--solid lo usaremos para ver la respuesta  -->
   <input type="text" id="numero_x"><br>
   <input type="text" id="numero_y"><br>
   <input type="text" id="numero_z"><br>
   <button type="button" onclick="ordenar()">Ordenatu</button>
-<script>
-  function ordenar(){
-
-    xtxt = document.getElementById("numero_x").value;
-    ytxt = document.getElementById("numero_y").value;
-    ztxt = document.getElementById("numero_z").value;
-
-    x = parseInt(xtxt);
-    y = parseInt(ytxt);
-    z = parseInt(ztxt);
 
 
-        if (x <= y && y <= z){
-          document.getElementById("resultado").innerHTML = x+"<"+y+"<"+z
-}
-
-  </script>
-    
 </body>
 </html>
