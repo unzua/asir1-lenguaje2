@@ -1,0 +1,180 @@
+<html lang="en">
+<head>
+  <style type="text/css">
+  .flex-container{
+      margin-left: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 70px;
+      height: 60px;
+
+
+
+  }
+  .flex-container > div{
+      display: flex;
+      margin-top: 70px;
+      margin-left: 5px;
+  }
+
+   table {
+       width: 50%;
+       height: 50%;
+   }
+
+   td {
+       width: 25%;
+       height: 25%;
+       background-color: black;
+       border: 3px solid black;
+       border-radius: 5px;
+   }
+
+   .letra {
+       color: white;
+       font-size: 40px;
+       text-align: center;
+       font-style: italic;
+   }
+
+   input {
+       width: 90px;
+       height: 30px;
+   }
+
+   .centrar {
+       margin-left: 210px;
+   }
+
+   }
+  </style>
+</head>
+<body>
+      <div id="juego">
+          <table>
+        <tr>
+          <td id="0" class="letra" onclick="girar()" data-valor="valor">?</td>
+          <td id="1" class="letra" onclick="girar()" data-valor="valor">?</td>
+          <td id="2" class="letra" onclick="girar()" data-valor="valor">?</td>
+          <td id="3" class="letra" onclick="girar()" data-valor="valor">?</td>
+        </tr>
+        <tr>
+          <td id="4" class="letra" onclick="girar()" data-valor="valor">?</td>
+          <td id="5" class="letra" onclick="girar()" data-valor="valor">?</td>
+          <td id="6" class="letra" onclick="girar()" data-valor="valor">?</td>
+          <td id="7" class="letra" onclick="girar()" data-valor="valor">?</td>
+        </tr>
+
+            </table>
+      </div>
+  <div class="centrar">
+    <input id="10" type="button" value="Iniciar" onclick="iniciarJuego()" />
+  </div>
+
+
+        <script>
+        var cartas = new Array(
+{nombre: '1', seleccion: false}, {nombre: '2', seleccion: false},
+{nombre: '3', seleccion: false}, {nombre: '4', seleccion: false},
+{nombre: '1', seleccion: false}, {nombre: '4', seleccion: false},
+{nombre: '3', seleccion: false}, {nombre: '2', seleccion: false}, );
+
+var intentos = 0;
+var jugada1 = "";
+var jugada2 = "";
+var identificadorJ1 = "";
+var identificadorJ2 = "";
+
+function iniciarJuego () {
+var dato = document.getElementById("juego");
+dato.style.opacity = 1;
+
+cartas.sort(function() {return Math.random() - 0.5});
+for ( var i = 0 ; i < 8 ; i++ ) {
+var carta = cartas[i].nombre;
+var dato = document.getElementById( i.toString() );
+dato.dataset.valor = carta;
+}
+};
+
+
+
+function girar () {
+var evento = window.event;
+
+jugada2 = evento.target.dataset.valor;
+identificadorJ2 = evento.target.id;
+
+
+if ( jugada1 !== "" ) {
+
+if ( jugada1 === jugada2 && identificadorJ1 !== identificadorJ2 && cartas[parseInt(identificadorJ2)].seleccion != true &&               cartas[parseInt(identificadorJ1)].seleccion != true) {
+
+  cartas[parseInt(identificadorJ1)].seleccion = true;
+  cartas[parseInt(identificadorJ2)].seleccion = true;
+
+  colorCambio(identificadorJ2, "blue", jugada2);
+  vaciar();
+  comprobar();
+}else if(identificadorJ1 !== identificadorJ2){
+  var self = this;
+  setTimeout(function(){
+    colorCambio(self.identificadorJ1, "black", "?")
+    colorCambio(self.identificadorJ2, "black", "?")
+    vaciar()
+  },200);
+
+  colorCambio(identificadorJ2, "blue", jugada2);
+}
+} else if(jugada2 !== "valor") {
+
+colorCambio(identificadorJ2, "blue", jugada2);
+
+jugada1 = jugada2;
+identificadorJ1 = identificadorJ2;
+}
+};
+
+function vaciar ()  {
+jugada1 = "";
+jugada2 = "";
+
+identificadorJ1 = "";
+identificadorJ2 = "";
+}
+
+function colorCambio (posicion, color, contenido) {
+document.getElementById(posicion.toString()).style.backgroundColor = color;
+document.getElementById(posicion.toString()).innerHTML = contenido;
+}
+
+function comprobar () {
+var aciertos = 0;
+for( var i = 0 ; i < 8 ; i++ ){
+if ( cartas[i].seleccion == true ) {
+  aciertos ++;
+}
+
+}
+
+if(aciertos == 8){
+document.getElementById("juego").innerHTML = "ZORIONAK DENAK AURKITU DITUZU";
+document.getElementById('10').style.display = 'none';
+}
+}
+
+function resetearJuego () {
+        cartas.sort(function() { return Math.random() - 0.5});
+        for ( var i = 0; i < 8 ; i++ ) {
+            var carta = cartas[i].nombre;
+            var dato = document.getElementById( i.toString() );
+            dato.dataset.valor = carta;
+            colorCambio(i, 'black', '?');
+        }
+    };
+
+        </script>
+
+    </body>
+</html>
