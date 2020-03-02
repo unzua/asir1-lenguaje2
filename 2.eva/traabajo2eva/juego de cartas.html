@@ -80,7 +80,7 @@
 {nombre: '1', seleccion: false}, {nombre: '4', seleccion: false},
 {nombre: '3', seleccion: false}, {nombre: '2', seleccion: false}, );
 
-var intentos = 0;
+
 var jugada1 = "";
 var jugada2 = "";
 var identificadorJ1 = "";
@@ -90,7 +90,7 @@ function iniciarJuego () {
 var dato = document.getElementById("juego");
 dato.style.opacity = 1;
 
-cartas.sort(function() {return Math.random() - 0.5});
+cartas.sort(function() {return Math.random() - 0,25});
 for ( var i = 0 ; i < 8 ; i++ ) {
 var carta = cartas[i].nombre;
 var dato = document.getElementById( i.toString() );
@@ -109,7 +109,7 @@ identificadorJ2 = evento.target.id;
 
 if ( jugada1 !== "" ) {
 
-if ( jugada1 === jugada2 && identificadorJ1 !== identificadorJ2 && cartas[parseInt(identificadorJ2)].seleccion != true &&               cartas[parseInt(identificadorJ1)].seleccion != true) {
+if ( jugada1 == jugada2 && identificadorJ1 !== identificadorJ2 && cartas[parseInt(identificadorJ2)].seleccion != true &&               cartas[parseInt(identificadorJ1)].seleccion != true) {
 
   cartas[parseInt(identificadorJ1)].seleccion = true;
   cartas[parseInt(identificadorJ2)].seleccion = true;
@@ -159,20 +159,10 @@ if ( cartas[i].seleccion == true ) {
 }
 
 if(aciertos == 8){
-document.getElementById("juego").innerHTML = "ZORIONAK DENAK AURKITU DITUZU";
+document.getElementById("juego").innerHTML = "ZORIONAK DENAK AURKITU DITUZU. SAKATU F5 BERRIRO JOLASTEKO";
 document.getElementById('10').style.display = 'none';
 }
 }
-
-function resetearJuego () {
-        cartas.sort(function() { return Math.random() - 0.5});
-        for ( var i = 0; i < 8 ; i++ ) {
-            var carta = cartas[i].nombre;
-            var dato = document.getElementById( i.toString() );
-            dato.dataset.valor = carta;
-            colorCambio(i, 'black', '?');
-        }
-    };
 
         </script>
 
