@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+  </style>
+</head>
+<body>
+
+<!-- https://getbootstrap.com/docs/4.4/layout/grid/ -->
+<div class="container-flex">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://image.freepik.com/vector-gratis/fondo-lettering-adios-mano-moviendose_23-2147958751.jpg" alt="adiooooooooos" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="https://asscat-hepatitis.org/wp-content/uploads/covid19.jpeg"alt="corona virus" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="https://okdiario.com/img/2019/09/05/mejores-frases-de-homer-simpson-655x368.jpg" alt="mepiro" width="1100" height="500">
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<!-- col-3 -->
+<div class="container-flex">
+  <div class="row justify-content-center">
+    <div class="col-3">
+      <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Los_Angeles%2C_Winter_2016.jpg/1200px-Los_Angeles%2C_Winter_2016.jpg" alt="Los Angeles" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Austin_August_2019_19_%28skyline_and_Lady_Bird_Lake%29.jpg/1200px-Austin_August_2019_19_%28skyline_and_Lady_Bird_Lake%29.jpg" alt="Chicago" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.nuevayork.es/wp-content/uploads/2013/04/Times-Square-in-New-York.jpg" alt="New York" width="1100" height="500">
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<!-- col-5 left -->
+<div class="container-flex">
+  <div class="row justify-content-left">
+    <div class="col-5">
+      <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Los_Angeles%2C_Winter_2016.jpg/1200px-Los_Angeles%2C_Winter_2016.jpg" alt="me piro" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Los_Angeles%2C_Winter_2016.jpg/1200px-Los_Angeles%2C_Winter_2016.jpg" alt="adios" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Austin_August_2019_19_%28skyline_and_Lady_Bird_Lake%29.jpg/1200px-Austin_August_2019_19_%28skyline_and_Lady_Bird_Lake%29.jpg" alt="adiooooooooo" width="1100" height="500">
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
